@@ -1,0 +1,165 @@
+<body id="signup">
+      <section>
+        <nav class="navbar navbar-light bg-trans">
+            <div class="container-fluid justify-content-center">
+              <a class="navbar-brand" href="../index.html">
+                <img src="/images/logos/M-Logo.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+              </a>
+            </div>
+          </nav>
+
+          <div id="signupcard" class="container d-flex justify-content-center col-6-lg">
+            <div class="card text-center shadow-lg" style="width: 75%;">
+                <div class="card-header">
+                  <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link" href="./login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="true" href="./signup.html">Sign Up</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body form-group">
+                    <form action="/signup" method="post">
+                      <div id="user-info">
+                        <div class="mb-3">
+                          <label for="inputfirstname" class="form-label">First Name:</label>
+                          <input type="firstname" class="form-control" id="inputfirstname" aria-describedby="" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputlastname" class="form-label">Last Name:</label>
+                            <input type="lastname" class="form-control" id="inputlastname" aria-describedby="" >
+                        </div>
+                        <div>
+                            <label>Username:</label>
+                            <input type="text" name="username"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address:</label>
+                            <input type="text" class="form-control" name="email" id="email" aria-describedby="" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Create Password:</label>
+                            <input type="password" class="form-control" name="password" id="inputpassword" aria-describedby="" >
+                        </div>
+                        <div class="mb-3">
+                          <label for="" class="form-label">Type of account:</label>
+                          <br>
+                          <div class="btn-group" role="group" aria-label="">
+                            <input type="radio" class="btn-check" name="AccountSel" id="StudentAccount" autocomplete="off" >
+                            <label class="btn btn-outline-primary" for="StudentAccount">Student</label>
+                            <input type="radio" class="btn-check" name="AccountSel" id="TeacherAccount" autocomplete="off" >
+                            <label class="btn btn-outline-primary" for="TeacherAccount">Teacher</label>
+                          </div>
+                      </div>
+                        <button id="signupnextbtn" type="button" class="btn btn-primary">Next</button>
+                      </div>
+
+
+                      <div id="teacher-info" class="hide">
+                      <div class="mb-3">
+                        <label for="" class="form-label">Pick your instrument you would like to teach:</label>
+                        <br>
+                        <div class="btn-group" role="group" aria-label="">
+                          <input type="radio" class="btn-check" name="InstrumentSelTeach" id="PianoTeach" autocomplete="off" >
+                          <label class="btn btn-outline-primary" for="PianoTeach">Piano</label>
+                          <input type="radio" class="btn-check" name="InstrumentSelTeach" id="GuitarTeach" autocomplete="off" >
+                          <label class="btn btn-outline-primary" for="GuitarTeach">Guitar</label>
+                          <input type="radio" class="btn-check" name="InstrumentSelTeach" id="DrumsTeach" autocomplete="off" >
+                          <label class="btn btn-outline-primary" for="DrumsTeach">Drums</label>
+                          <input type="radio" class="btn-check" name="InstrumentSelTeach" id="ClarinetTeach" autocomplete="off" >
+                          <label class="btn btn-outline-primary" for="ClarinetTeach">Clarinet</label>
+                          <input type="radio" class="btn-check" name="InstrumentSelTeach" id="BassTeach" autocomplete="off" >
+                          <label class="btn btn-outline-primary" for="BassTeach">Bass</label>
+                        </div>
+                    </div>
+                      <div class="mb-3">
+                        <label for="" class="form-label">What style of music would you like to teach?</label>
+                        <br>
+                        <div class="btn-group" role="group" aria-label="">
+                          <input type="radio" class="btn-check" name="genreteach" id="JazzGenreTeach" autocomplete="off"  >
+                          <label class="btn btn-outline-primary" for="JazzGenreTeach">Jazz</label>
+                          <input type="radio" class="btn-check" name="genreteach" id="ClassicalGenreTeach" autocomplete="off" >
+                          <label class="btn btn-outline-primary" for="ClassicalGenreTeach">Classical</label>
+                          <input type="radio" class="btn-check" name="genreteach" id="RockGenreTeach" autocomplete="off" >
+                          <label class="btn btn-outline-primary" for="RockGenreTeach">Rock</label>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="" class="form-label">What are your rates like?</label>
+                        <br>
+                        <div class="btn-group" role="group" aria-label="">
+                          <input type="radio" class="btn-check" name="budgetsel" id="onedollarsignrate" autocomplete="off" >
+                          <label class="btn btn-outline-primary" for="onedollarsignrate"> $ </label>
+                          <input type="radio" class="btn-check" name="budgetsel" id="twodollarsignrate" autocomplete="off" >
+                          <label class="btn btn-outline-primary" for="twodollarsignrate"> $$ </label>
+                          <input type="radio" class="btn-check" name="budgetsel" id="threedollarsignrate" autocomplete="off" >
+                          <label class="btn btn-outline-primary" for="threedollarsignrate"> $$$ </label>
+                        </div>
+                      </div>                   
+                      </div>
+
+
+                      <div id="student-info" class="hide">
+                        <div class="mb-3">
+                          <label for="" class="form-label">Pick your instrument you would like to learn:</label>
+                          <br>
+                          <div class="btn-group" role="group" aria-label="">
+                            <input type="radio" class="btn-check" name="instrumentsellearn" id="PianoLearn" autocomplete="off" >
+                            <label class="btn btn-outline-primary" for="PianoLearn">Piano</label>
+                            <input type="radio" class="btn-check" name="instrumentsellearn" id="GuitarLearn" autocomplete="off" >
+                            <label class="btn btn-outline-primary" for="GuitarLearn">Guitar</label>
+                            <input type="radio" class="btn-check" name="instrumentsellearn" id="DrumsLearn" autocomplete="off" >
+                            <label class="btn btn-outline-primary" for="DrumsLearn">Drums</label>
+                            <input type="radio" class="btn-check" name="instrumentsellearn" id="ClarinetLearn" autocomplete="off" >
+                            <label class="btn btn-outline-primary" for="ClarinetLearn">Clarinet</label>
+                            <input type="radio" class="btn-check" name="instrumentsellearn" id="BassLearn" autocomplete="off" >
+                            <label class="btn btn-outline-primary" for="BassLearn">Bass</label>
+                          </div>
+                      </div>
+                        <div class="mb-3">
+                          <label for="" class="form-label">What style of music, if any, would you like to learn?</label>
+                          <br>
+                          <div class="btn-group" role="group" aria-label="">
+                            <input type="radio" class="btn-check" name="genrelearn" id="JazzGenre" autocomplete="off" >
+                            <label class="btn btn-outline-primary" for="JazzGenre">Jazz</label>
+                            <input type="radio" class="btn-check" name="genrelearn" id="ClassicalGenre" autocomplete="off" //>
+                            <label class="btn btn-outline-primary" for="ClassicalGenre">Classical</label>
+                            <input type="radio" class="btn-check" name="genrelearn" id="RockGenre" autocomplete="off" //>
+                            <label class="btn btn-outline-primary" for="RockGenre">Rock</label>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="" class="form-label">What is your current level of expertise with the instrument?</label>
+                          <input type="range" min="1" max="5" value="1" class="slider" id="Skill-Level" //>
+                          <div class="d-flex justify-content-between">
+                                <h8>Beginner</h8>
+                                <h8>Expert</h8>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="" class="form-label">What is your budget?</label>
+                          <br>
+                          <div class="btn-group" role="group" aria-label="">
+                            <input type="radio" class="btn-check" name="budgetsel" id="onedollarsign" autocomplete="off" //>
+                            <label class="btn btn-outline-primary" for="onedollarsign"> $ </label>
+                            <input type="radio" class="btn-check" name="budgetsel" id="twodollarsign" autocomplete="off" //>
+                            <label class="btn btn-outline-primary" for="twodollarsign"> $$ </label>
+                            <input type="radio" class="btn-check" name="budgetsel" id="threedollarsign" autocomplete="off" />
+                            <label class="btn btn-outline-primary" for="threedollarsign"> $$$ </label>
+                          </div>
+                        </div>                   
+                        </div>
+                        <div>
+                          <input id="signupbutton" class="btn btn-primary hide" type="submit" value="Sign Up"/>
+                        </div>
+                      </form>
+                </div>
+              </div>
+          </div>
+        
+      </section> 
+      
+    <script src="/js/signupscript.js"></script>
+    </body>
