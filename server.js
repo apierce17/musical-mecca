@@ -44,82 +44,12 @@ var sessionChecker = (req, res, next) => {
     }
 };
 
-// route for home-page
-app.get('/', sessionChecker, (req, res) => {
-    res.redirect('/login');
-});
-
-//route for signup
-app.route('/signup')
-    .get((req, res) => {
-        //res.sendFile(__dirname + '/public/signup.html');
-        res.render('signup', hbsContent);
-    })
-    .post((req, res) => {
-        User.create ({
-            username: req.body.username,
-            password: req.body.password,
-        })
-        .then(user => {
-            req.session.user = user.dataValues;
-            res.redirect('/dashboard');
-        })
-        .catch(error => {
-            res.redirect('/signup');
-        });
-    });
-
-// route for user login
-app.route('/login')
-    .get((req, res) => {
-        //res.sendFile(__dirname + '/public/login.html');
-        res.render('login', hbsContent);
-    })
-    .post((req, res) => {
-        var username = req.body.username;
-        var password = req.body.password;
-
-        User.findOne({ where: {username: username } }).then(function (user) {
-            if (!user) {
-                res.redirect('/login');
-            } else if (!user.validPassword(password)) {
-                res.redirect('/login');
-            } else {
-                req.session.user = user.dataValues;
-                res.redirect('/dashboard');
-            }
-        });
-    });
-
-
-// route for user's dashboard
-app.get('/dashboard', (req, res) => {
-    if (req.session.user && req.cookies.user_sid) {
-        hbsContent.loggedin = true;
-        hbsContent.userName = req.session.user.username;
-        hbsContent.title = "You are loggen in";
-        //res.sendFile(__dirname + '/public/dashboard.html');
-        res.render('index', hbsContent);
-    } else {
-        res.redirect('/login');
-    }
-})
-
-// route for user logout
-app.get('/logout', (req, res) => {
-    if (req.session.user && req.cookies.user_sid) {
-        hbsContent.loggedin = false;
-        hbsContent.title = "You are logged out!";
-        res.clearCookie('user_sid');
-        res.redirect('/');
-    } else {
-        res.redirect('/login');
-    }
-});
-
 // route for handling 404 requests(unavailable route)
 app.use(function (req, res, next) {
     res.status(404).send("Sorry can't find that!")
 });
+
+
+app.use(require('./controllers'));
 
 app.listen(app.get('port'), () => console.log(`App started on port ${app.get('port')}`));
