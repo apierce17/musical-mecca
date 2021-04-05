@@ -3,7 +3,7 @@
 This group project was geared toward the individuals who want to learn musical instruments. This website is designed to have an individual sign up and choose whether they
 were a student or a teacher so that the community of musicians can really on a dedicated platform to find their needs instead of broad topic forums and webpages.
 
-## Walkthrough of Musicians Mecca
+## Deployed link:
 
 
 
@@ -32,4 +32,3 @@ The contributors of *Musicians Mecca* are as follows:
 - [ ] Have a detailed calendar for teachers, so they can keep track of their schedule.
 
 - [ ] Incorporate more user interaction by allowing the users to upload a photo and update a bio for their "card".
-
